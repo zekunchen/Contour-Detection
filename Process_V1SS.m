@@ -1,6 +1,6 @@
 function [TT, Tt] =Process_V1SS(outm,nThetas)
 
-    sigmax = 3.645;
+    sigmax = 3.65;
     sigmay = sigmax / 8;
     Surroundsize = 3;
     
