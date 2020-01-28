@@ -1,6 +1,6 @@
 function [omaxs,dir]=V1_to_V4(img_input,nvalue)
     ndir = 12; 
-    fac = [1.5 1.25 1 3];
+    fac = [1 1 1 1];
     sigma_y = [1 2 3 4];% 
     WR = 8;%
     AR = [.7*WR 1.4*WR 2.15*WR 3*WR];
@@ -24,7 +24,7 @@ function [omaxs,dir]=V1_to_V4(img_input,nvalue)
     end
     [hh,ww]=size(img);
 
-    %% V1²ã²Ù×÷
+    %% V1
     t='Gabor';
 %     t='DOG';
     coeff = pi/ndir;
@@ -39,11 +39,11 @@ function [omaxs,dir]=V1_to_V4(img_input,nvalue)
     p = -2:2;
     w = 1./(sqrt(2*pi)).*exp(-(p).^2./2)*2.5;
 
-    %th:  0¡ã 15¡ã 30¡ã 
-    %     45¡ã 60¡ã 75¡ã 
-    %     90¡ã 105¡ã 120¡ã 
-    %    135¡ã 150¡ã 165¡ã
-    for th=0:coeff:pi-coeff %¦È£ºTheta
+    %th:  0Â° 15Â° 30Â° 
+    %     45Â° 60Â° 75Â° 
+    %     90Â° 105Â° 120Â° 
+    %    135Â° 150Â° 165Â°
+    for th=0:coeff:pi-coeff %Î¸ï¼šTheta
       if(th<=pi/2)
         theta = abs(th-pi/2);
       else
@@ -94,7 +94,7 @@ function [omaxs,dir]=V1_to_V4(img_input,nvalue)
       i = i+1;  
     end
 
-    %% V2²ã²Ù×÷
+    %% V2
     cs=fac;
     s=[f(:).size];
     V2 = struct('max', zeros(size(V1.simple_e,3), size(V1.simple_e,4)), ...
@@ -157,7 +157,7 @@ function [omaxs,dir]=V1_to_V4(img_input,nvalue)
     end
 
         V2.corner = sum(V1.simple_e,[]);
-    %% V4²ã ¾Ö²¿ÇúÂÊºÍÐÎ×´Ï¸°ûÏìÓ¦
+    %% V4
         laV1 = V1;
         laV2 = V2;
 
