@@ -4,7 +4,8 @@ INTRODUCTION
 This code is provided for research purpose only. This code performs the contour detection by simulating the 
 curvature cell reported in:
 
-Zekun chen, Rongtai Cai*. Contour Detection by Simulating the Curvature Cell in the Visual Cortex and its Application to Object Classification.2020.
+Zekun chen, Rongtai Cai*. 
+Contour Detection by Simulating the Curvature Cell in the Visual Cortex and its Application to Object Classification.2020.
 Please cite our paper if this code is used to motivate any publications.
 ===================================================================================
 To detect contour with the model to an image,run "Demo.m" for an example.
